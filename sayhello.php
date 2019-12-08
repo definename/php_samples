@@ -1,3 +1,3 @@
 <?php
-    print "Hello, ";
-    print $_POST["user"];
+    $user = $_POST["user"];
+    print "Hello, " . $user;
