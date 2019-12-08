@@ -4,7 +4,7 @@
     $hello_array[] = nl2br("Hello0, " . $user);
     $hello_array[] = nl2br("Hello1, " . $user);
 
-    print "<table>\n";
+    print "<table border='1'>\n";
     foreach ($hello_array as $key => $value) {
         print("<tr><td>$key</td><td>$value</td></tr>");
     }
