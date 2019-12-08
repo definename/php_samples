@@ -1,3 +1,5 @@
 <?php
     $user = $_POST["user"];
-    print "Hello, " . $user;
+    for ($i = 0; $i < 10; $i++) {
+        print nl2br("Hello, " . $user . "\n");
+    }
