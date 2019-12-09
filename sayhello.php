@@ -1,14 +1,19 @@
 <?php
     $user = $_POST["user"];
+    print nl2br("Hello " . $user . " here is summury for you\n\n");
 
-    $hello_array["one"] = nl2br("Hello0, " . $user);
-    $hello_array["two"] = nl2br("Hello1, " . $user);
+    $state_city_population = array("New York" => array("New York" => 8175133),
+                                  "California" => array("Los Angeles" => 3792621,
+                                                        "San Diego" => 1307402));
 
-    print "<table border='1'>\n";
-    foreach ($hello_array as $key => $value) {
-        print("<tr><td>$key</td><td>$value</td></tr>");
+    $total_population = 0;
+    foreach ($state_city_population as $state => $city_population) {
+        print("State:$state");
+        print "<table border='1'>\n";
+        foreach ($city_population as $city => $population) {
+            print("<tr><td>$city</td><td>$population</td></tr>");
+            $total_population += $population;
+        }
+        print nl2br("</table>\n");
     }
-    print "</table>";
-
-    $hello_count = count($hello_array);
-    print "Table size:$hello_count";
+    print nl2br("Total population:" . $total_population);
