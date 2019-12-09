@@ -9,7 +9,7 @@
     $total_population = 0;
     foreach ($state_city_population as $state => $city_population) {
         print("State:$state");
-        print "<table border='1'>\n";
+        print nl2br("<table border='1'>\n");
         foreach ($city_population as $city => $population) {
             print("<tr><td>$city</td><td>$population</td></tr>");
             $total_population += $population;
