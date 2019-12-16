@@ -11,11 +11,11 @@
     <button form="say" type="submit">Submit</button>
 
     <?php
+    print nl2br("<hr>");
 
     use \Order\Dish;
     use \Order\ComboDish;
 
-    print nl2br("<hr>Class:\n");
     require "dish.php";
 
     $ingredients = ["Water", "Chiken", "Pickles"];
@@ -34,7 +34,6 @@
             print nl2br("Something in combo contains $ing\n");
         }
     }
-
 ?>
 
 </body>
