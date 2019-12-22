@@ -1,9 +1,13 @@
 <?php
 
-$content = @file_get_contents("file_template.html");
-if ($content) {
-    $content = str_ireplace("{name}", $_SESSION["name"], $content);
-    print $content;
+$filename = "file_template.html";
+if (is_readable($filename)) {
+    if (($content = @file_get_contents($filename))) {
+        $content = str_ireplace("{name}", $_SESSION["name"], $content);
+        print $content;
+    } else {
+        print nl2br("Failed to retrieve content of $filename\n");
+    }
 } else {
-    print nl2br("Failed to open template file\n");
+    print nl2br("File '$filename' is not readable\n");
 }

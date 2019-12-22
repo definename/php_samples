@@ -13,7 +13,7 @@
     require "test_dish.php";
 
     print nl2br("<hr>");
-    $_SESSION["name"] = "Oleh";
+    $_SESSION["name"] = "Master";
     require "test_file.php"
     ?>
 </body>
