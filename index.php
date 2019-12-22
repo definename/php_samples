@@ -10,7 +10,11 @@
     require "test_form.php";
 
     print nl2br("<hr>");
-    require "test_dish.php"
+    require "test_dish.php";
+
+    print nl2br("<hr>");
+    $_SESSION["name"] = "Oleh";
+    require "test_file.php"
     ?>
 </body>
 
