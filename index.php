@@ -5,7 +5,16 @@
 </head>
 
 <body bgcolor="#c0c0c0">
+
     <?php
+    session_start();
+    if (isset($_SESSION["count"])) {
+        $_SESSION["count"] += 1;
+    } else {
+        $_SESSION["count"] = 1;
+    }
+    // ....................................................................
+
     print nl2br("<hr>");
     require "test_form.php";
 
@@ -18,6 +27,9 @@
 
     print nl2br("<hr>");
     require "search.php";
+
+    // ....................................................................
+    print "You have looked at this page " . $_SESSION["count"] . " times";
     ?>
 </body>
 
