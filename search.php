@@ -21,7 +21,7 @@ if ("POST" == $_SERVER["REQUEST_METHOD"]) {
         $dir = new RecursiveDirectoryIterator($root_dir, RecursiveDirectoryIterator::SKIP_DOTS);
         $files = new RecursiveIteratorIterator($dir, RecursiveIteratorIterator::SELF_FIRST);
 
-        $found_something = 0;
+        $file_found = 0;
 
         foreach ($files as $file_info) {
             if ($file_info->isFile()) {
@@ -32,7 +32,7 @@ if ("POST" == $_SERVER["REQUEST_METHOD"]) {
                         $file_line = strip_tags($html_file->fgets());
                         $found = preg_match("/\b" . $find_me ."\b/i", $file_line);
                         if ($found == 1) {
-                            $found_something += 1;
+                            $file_found += 1;
                             $path_name = $file_info->getPathname();
                             $file_name = $file_info->getFilename();
                             print "<a href=" . $path_name .">" . $file_name . "</a>";
@@ -45,7 +45,7 @@ if ("POST" == $_SERVER["REQUEST_METHOD"]) {
             }
         }
 
-        if ($found_something === 0) {
+        if ($file_found === 0) {
             print $find_me . " was not found" . nl2br(PHP_EOL);
         }
     }
