@@ -14,7 +14,10 @@
 
     print nl2br("<hr>");
     $_SESSION["name"] = "Master";
-    require "test_file.php"
+    require "test_file.php";
+
+    print nl2br("<hr>");
+    require "search.php";
     ?>
 </body>
 
