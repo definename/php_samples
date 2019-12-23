@@ -18,36 +18,29 @@ function show_guest_book_form()
 {
     $self_path = $_SERVER["PHP_SELF"];
     print<<<_HTML_GUEST_BOOK_
-    <head>
-        <title>Home</title>
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta http-equiv="expires" content="0">
-    </head>
-    <body>
-        <form  method="post" action="$self_path">
-        <table cellpadding="2" cellspacing="0" style="border: 1px solid;">
-            <tbody>
-                <tr>
-                    <td align="right">Name:</td>
-                    <td align="left">
-                        <input type="text" name="msg_from" maxlength="40" size="30">
-                    </td>
-                </tr>
-                <tr>
-                    <td align="right">Message:</td>
-                    <td align="left">
-                        <textarea cols="45" rows="7" name="msg_message"></textarea>
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center" colspan="2">
-                        <input type="submit" value="Add">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        </form>
-    </body>
+    <form  method="post" action="$self_path">
+    <table cellpadding="2" cellspacing="0" style="border: 1px solid;">
+        <tbody>
+            <tr>
+                <td align="right">Name:</td>
+                <td align="left">
+                    <input type="text" name="msg_from" maxlength="40" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">Message:</td>
+                <td align="left">
+                    <textarea cols="45" rows="7" name="msg_message"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2">
+                    <input type="submit" value="Add">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
     _HTML_GUEST_BOOK_;
 }
 
