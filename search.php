@@ -3,12 +3,12 @@
 function show_search_form()
 {
     $self_path = $_SERVER["PHP_SELF"];
-    print<<<_HTML_
-    <form id="search_id" method="POST" action="$self_path">
+    print<<<_HTML_SEARCH_
+    <form method="POST" action="$self_path">
         <input type="text" name="find_me" />
         <input type="submit" value="Search" />
     </form>
-    _HTML_;
+    _HTML_SEARCH_;
 }
 
 if ("POST" == $_SERVER["REQUEST_METHOD"]) {
