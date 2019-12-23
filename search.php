@@ -1,6 +1,6 @@
 <?php
 
-function search_form()
+function show_search_form()
 {
     $self_path = $_SERVER["PHP_SELF"];
     print<<<_HTML_
@@ -12,7 +12,7 @@ function search_form()
 }
 
 if ("POST" == $_SERVER["REQUEST_METHOD"]) {
-    search_form();
+    show_search_form();
 
     if (isset($_POST["find_me"])) {
         $find_me = $_POST["find_me"];
@@ -44,10 +44,11 @@ if ("POST" == $_SERVER["REQUEST_METHOD"]) {
                 }
             }
         }
+
         if ($found_something === 0) {
             print $find_me . " was not found" . nl2br(PHP_EOL);
         }
     }
 } else {
-    search_form();
+    show_search_form();
 }
