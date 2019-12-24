@@ -58,7 +58,7 @@ function load_history()
             print nl2br("<hr>");
         }
     } else {
-        print "There are no record in database";
+        print "There are no record in database" . nl2br(PHP_EOL);
     }
 }
 

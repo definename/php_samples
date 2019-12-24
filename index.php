@@ -7,7 +7,6 @@
 </head>
 
 <body bgcolor="#c0c0c0">
-
     <?php
     session_start();
     if (isset($_SESSION["count"])) {
@@ -32,6 +31,9 @@
 
     print nl2br("<hr>");
     require "guest_book.php";
+
+    print nl2br("<hr>");
+    require "db_sqlite.php";
 
     // ....................................................................
     print "You have looked at this page " . $_SESSION["count"] . " times";
