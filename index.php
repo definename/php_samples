@@ -32,9 +32,6 @@
     print nl2br("<hr>");
     require "guest_book.php";
 
-    print nl2br("<hr>");
-    require "db_sqlite.php";
-
     // ....................................................................
     print "You have looked at this page " . $_SESSION["count"] . " times";
     ?>
